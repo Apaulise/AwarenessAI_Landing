@@ -1,0 +1,80 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#080B14;color:#F8FAFC;font-family:var(--font-geist),system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+a{color:#22D3EE;text-decoration:none}
+a:hover{color:#67E8F9}
+::selection{background:rgba(124,58,237,.4);color:#fff}
+[id]{scroll-margin-top:84px}
+.mono{font-family:var(--font-geist-mono),ui-monospace,monospace}
+
+@keyframes travel{0%{transform:translateY(-6px);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translateY(var(--tl,48px));opacity:0}}
+@keyframes glowpulse{0%,100%{opacity:.45;transform:scale(1)}50%{opacity:.8;transform:scale(1.06)}}
+@keyframes gshift{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes barrise{from{transform:scaleY(.15)}to{transform:scaleY(1)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes pathflow{to{stroke-dashoffset:-400}}
+@keyframes ctaIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---- Scroll reveal (class toggled by RevealProvider) ---- */
+html.reveal-ready [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1)}
+html.reveal-ready [data-reveal].in{opacity:1;transform:none}
+
+/* ---- Navbar ---- */
+.nav{border-bottom:1px solid transparent;transition:background .3s ease,border-color .3s ease,backdrop-filter .3s ease}
+.nav-scrolled{background:rgba(8,11,20,.82);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom-color:rgba(255,255,255,.07)}
+.nav-desk{display:flex}
+.nav-link{color:#CBD5E1;font-size:14.5px;font-weight:500;transition:color .2s}
+.nav-link:hover{color:#F8FAFC}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:11px;background:linear-gradient(90deg,#7C3AED,#3B82F6);color:#fff;font-size:14px;font-weight:600;box-shadow:0 6px 20px -6px rgba(124,58,237,.6);transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{color:#fff;transform:translateY(-1px);box-shadow:0 10px 26px -6px rgba(124,58,237,.75)}
+.nav-burger{display:none;width:42px;height:42px;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:11px;color:#F8FAFC;cursor:pointer}
+.nav-mobile{display:none;overflow:hidden;transition:max-height .35s ease;background:rgba(8,11,20,.96);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.06)}
+
+/* ---- Final CTA ---- */
+.cta-ring{transition:transform .3s,border-color .3s}
+[role=button]:hover .cta-ring{transform:scale(1.1);border-color:rgba(139,92,246,.6)}
+.cta-call:hover{color:#fff;transform:translateY(-2px) scale(1.02)!important;box-shadow:0 22px 54px -10px rgba(124,58,237,.85)!important}
+
+/* ---- Contact form ---- */
+.cf-field{display:flex;flex-direction:column;gap:9px}
+.cf-field>span{font-size:14.5px;font-weight:600;color:#F8FAFC}
+.cf-field>span em{font-style:normal;font-weight:400;color:#64748B}
+.cf-input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:#080B14;color:#F8FAFC;font:inherit;font-size:15px;transition:border-color .2s,box-shadow .2s}
+.cf-input::placeholder{color:#64748B}
+.cf-input:focus{outline:none;border-color:rgba(139,92,246,.6);box-shadow:0 0 0 3px rgba(139,92,246,.18)}
+select.cf-input{appearance:none;-webkit-appearance:none;padding-right:42px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+select.cf-input:has(option[value=""]:checked){color:#64748B}
+select.cf-input option{color:#F8FAFC;background:#0B0E18}
+textarea.cf-input{resize:vertical;min-height:110px}
+
+/* ---- Service cards: glow intensifies on hover ---- */
+[data-svc]:hover [data-svc-glow]{opacity:.9!important}
+
+/* ---- Component hover states (converted from style-hover) ---- */
+.hv1:hover{transform:translateY(-2px)!important;box-shadow:0 18px 40px -8px rgba(124,58,237,.8)!important}
+.hv2:hover{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.22)!important}
+.hv3:hover{gap:11px!important;color:#67E8F9!important}
+.hv4:hover{gap:11px!important}
+.hv5:hover{transform:translateY(-4px)!important;border-color:rgba(139,92,246,.4)!important;box-shadow:0 20px 50px -20px rgba(124,58,237,.4)!important}
+.hv6:hover{transform:translateY(-4px)!important;border-color:rgba(59,130,246,.4)!important;box-shadow:0 20px 50px -20px rgba(59,130,246,.4)!important}
+.hv7:hover{transform:translateY(-4px)!important;border-color:rgba(34,211,238,.4)!important;box-shadow:0 20px 50px -20px rgba(34,211,238,.35)!important}
+.hv8:hover{background:rgba(139,92,246,.12)!important;border-color:rgba(139,92,246,.5)!important}
+.hv9:hover{color:#F8FAFC!important}
+
+/* ---- Responsive (inline grid values are overridden here) ---- */
+@media (max-width:899px){
+  .nav-desk{display:none}
+  .nav-burger{display:inline-flex}
+  .nav-mobile{display:block}
+}
+@media (max-width:939px){ [data-hero-grid]{grid-template-columns:1fr!important} }
+@media (max-width:759px){ [data-showcase],[data-showcase-rev]{grid-template-columns:1fr!important} }
+@media (max-width:899px){ [data-contact-grid]{grid-template-columns:1fr!important} }
+@media (max-width:560px){ [data-contact-row]{grid-template-columns:1fr!important} }
+@media (max-width:680px){ [data-th-sidebar]{display:none!important} }
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
