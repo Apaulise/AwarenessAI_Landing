@@ -12,6 +12,7 @@ import FinalCta from "@/components/FinalCta";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import RevealProvider from "@/components/RevealProvider";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function Page() {
   return (
@@ -30,6 +31,7 @@ export default function Page() {
       <Contact />
       <Footer />
       <RevealProvider />
+      <WhatsAppFloat />
     </div>
   );
 }

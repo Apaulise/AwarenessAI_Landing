@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { links } from "@/config";
+import { FaWhatsapp } from "react-icons/fa";
 
 const TEAM_SIZES = ["Solo yo", "2–10 personas", "11–50 personas", "51–200 personas", "Más de 200"];
 
@@ -57,15 +58,21 @@ export default function Contact() {
             ))}
           </ul>
           <p style={{ margin: "0 0 14px", fontSize: 15, color: "#64748B" }}>¿Preferís hablar directamente?</p>
-          <a className="hv2" href={links.cal} style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "13px 22px", borderRadius: 13, background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.12)", color: "#F8FAFC", fontSize: 15, fontWeight: 600, transition: "background .2s,border-color .2s" }}>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
-            Agendar llamada
-          </a>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <a className="hv2" href={links.cal} style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "13px 22px", borderRadius: 13, background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.12)", color: "#F8FAFC", fontSize: 15, fontWeight: 600, transition: "background .2s,border-color .2s" }}>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Agendar llamada
+            </a>
+            <a className="hv2" href={links.whatsapp} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "13px 22px", borderRadius: 13, background: "rgba(37,211,102,.12)", border: "1px solid rgba(37,211,102,.3)", color: "#25D366", fontSize: 15, fontWeight: 600, transition: "background .2s,border-color .2s" }}>
+              <FaWhatsapp size={17} />
+              WhatsApp
+            </a>
+          </div>
         </div>
 
         <div data-reveal style={{ padding: "clamp(22px,3vw,36px)", borderRadius: 20, background: "#0A0D16", border: "1px solid rgba(255,255,255,.08)", boxShadow: "0 30px 80px -40px rgba(0,0,0,.9)" }}>

@@ -1,4 +1,5 @@
 import { links } from "@/config";
+import { FaLinkedin, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -10,7 +11,18 @@ export default function Footer() {
             Awareness
             <span style={{ background: "linear-gradient(90deg,#8B5CF6,#3B82F6,#22D3EE)", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent" }}>AI</span>
           </div>
-          <p style={{ margin: "0", fontSize: "14px", lineHeight: "1.55", color: "#64748B" }}>AI solutions built around real businesses.</p>
+          <p style={{ margin: "0 0 16px", fontSize: "14px", lineHeight: "1.55", color: "#64748B" }}>AI solutions built around real businesses.</p>
+          <div style={{ display: "flex", gap: "12px" }}>
+            <a className="hv9" href={links.linkedin} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 36, height: 36, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.12)", color: "#94A3B8", transition: "all .2s" }} title="LinkedIn">
+              <FaLinkedin size={16} />
+            </a>
+            <a className="hv9" href={links.instagram} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 36, height: 36, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.12)", color: "#94A3B8", transition: "all .2s" }} title="Instagram">
+              <FaInstagram size={16} />
+            </a>
+            <a className="hv9" href={links.whatsapp} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 36, height: 36, borderRadius: "50%", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.12)", color: "#94A3B8", transition: "all .2s" }} title="WhatsApp">
+              <FaWhatsapp size={16} />
+            </a>
+          </div>
         </div>
         <div style={{ display: "flex", gap: "clamp(32px,6vw,72px)", flexWrap: "wrap" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "11px" }}>
@@ -23,8 +35,6 @@ export default function Footer() {
             <span className="mono" style={{ fontSize: "11px", color: "#475569", textTransform: "uppercase", letterSpacing: ".08em", marginBottom: "2px" }}>Contacto</span>
             <a className="hv9" href={links.cta} style={{ color: "#94A3B8", fontSize: "14px" }}>Agendar llamada</a>
             <a className="hv9" href="#contacto" style={{ color: "#94A3B8", fontSize: "14px" }}>Escribinos</a>
-            <a className="hv9" href={links.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "#94A3B8", fontSize: "14px" }}>LinkedIn</a>
-            <a className="hv9" href={links.instagram} target="_blank" rel="noopener noreferrer" style={{ color: "#94A3B8", fontSize: "14px" }}>Instagram</a>
           </div>
         </div>
       </div>
