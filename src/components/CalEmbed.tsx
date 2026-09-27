@@ -12,8 +12,8 @@ export default function CalEmbed({ calLink }: { calLink: string }) {
         hideEventTypeDetails: false,
         layout: "month_view",
         cssVarsPerTheme: {
-          dark: { "cal-brand": "#7C3AED" },
-          light: { "cal-brand": "#7C3AED" },
+          dark: { "cal-brand": "#f2c14e" },
+          light: { "cal-brand": "#f2c14e" },
         },
       });
     })();

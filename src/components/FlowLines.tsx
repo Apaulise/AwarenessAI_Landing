@@ -1,4 +1,4 @@
-const COLORS = ["139,92,246", "59,130,246", "34,211,238"];
+const COLORS = ["242,193,78", "138,141,146", "98,101,107"];
 
 // 28 curved paths (two mirrored sets of 14), staggered in opacity, width and speed.
 // Animated purely in CSS via the `pathflow` keyframe.

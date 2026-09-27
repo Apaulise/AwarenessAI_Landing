@@ -5,7 +5,6 @@ import { links } from "@/config";
 
 const NAV_LINKS = [
   { href: "#soluciones", label: "Soluciones" },
-  { href: "#servicios", label: "Servicios" },
   { href: "#metodologia", label: "Cómo trabajamos" },
   { href: "#proyectos", label: "Proyectos" },
   { href: "#faq", label: "FAQ" },
@@ -39,11 +38,11 @@ export default function Nav() {
       style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100 }}
     >
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "14px clamp(18px,5vw,48px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
-        <a href="#top" aria-label="AwarenessAI inicio" style={{ display: "flex", alignItems: "center", gap: 10, color: "#F8FAFC", fontWeight: 700, fontSize: 19, letterSpacing: "-.01em" }}>
-          <span style={{ width: 11, height: 11, borderRadius: 3, background: "linear-gradient(135deg,#7C3AED,#22D3EE)", boxShadow: "0 0 14px rgba(124,58,237,.7)" }} />
+        <a href="#top" aria-label="AwarenessAI inicio" style={{ display: "flex", alignItems: "center", gap: 9, color: "var(--ink)", fontWeight: 600, fontSize: 18, letterSpacing: "-.01em" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/awareness-mark.png" alt="" style={{ width: 22, height: 22, objectFit: "contain" }} />
           <span>
-            Awareness
-            <span style={{ background: "linear-gradient(90deg,#8B5CF6,#3B82F6,#22D3EE)", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent" }}>AI</span>
+            Awareness<span style={{ color: "var(--ink-3)" }}>AI</span>
           </span>
         </a>
         <div className="nav-desk" style={{ alignItems: "center", gap: 30 }}>
@@ -85,7 +84,7 @@ export default function Nav() {
               href={l.href}
               onClick={() => setOpen(false)}
               tabIndex={open ? 0 : -1}
-              style={{ padding: "13px 4px", color: "#CBD5E1", fontSize: 16, fontWeight: 500, borderBottom: i < NAV_LINKS.length - 1 ? "1px solid rgba(255,255,255,.05)" : undefined }}
+              style={{ padding: "13px 4px", color: "var(--ink-2)", fontSize: 16, fontWeight: 500, borderBottom: i < NAV_LINKS.length - 1 ? "1px solid var(--line)" : undefined }}
             >
               {l.label}
             </a>
