@@ -13,13 +13,13 @@ export default function Footer() {
           </div>
           <p style={{ margin: "0 0 16px", fontSize: "14px", lineHeight: "1.55", color: "var(--ink-3)" }}>Soluciones de IA construidas alrededor de negocios reales.</p>
           <div style={{ display: "flex", gap: "12px" }}>
-            <a className="hv9" href={links.linkedin} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 36, height: 36, borderRadius: "50%", background: "var(--raised)", border: "1px solid var(--line-strong)", color: "var(--ink-2)", transition: "all .2s" }} title="LinkedIn">
+            <a className="foot-link icon-link" href={links.linkedin} target="_blank" rel="noopener noreferrer" style={{ width: 36, height: 36 }} title="LinkedIn">
               <FaLinkedin size={16} />
             </a>
-            <a className="hv9" href={links.instagram} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 36, height: 36, borderRadius: "50%", background: "var(--raised)", border: "1px solid var(--line-strong)", color: "var(--ink-2)", transition: "all .2s" }} title="Instagram">
+            <a className="foot-link icon-link" href={links.instagram} target="_blank" rel="noopener noreferrer" style={{ width: 36, height: 36 }} title="Instagram">
               <FaInstagram size={16} />
             </a>
-            <a className="hv9" href={links.whatsapp} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 36, height: 36, borderRadius: "50%", background: "var(--raised)", border: "1px solid var(--line-strong)", color: "var(--ink-2)", transition: "all .2s" }} title="WhatsApp">
+            <a className="foot-link icon-link" href={links.whatsapp} target="_blank" rel="noopener noreferrer" style={{ width: 36, height: 36 }} title="WhatsApp">
               <FaWhatsapp size={16} />
             </a>
           </div>
@@ -27,13 +27,13 @@ export default function Footer() {
         <div style={{ display: "flex", gap: "clamp(32px,6vw,72px)", flexWrap: "wrap" }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "11px" }}>
             <span className="mono" style={{ fontSize: "11px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".08em", marginBottom: "2px" }}>Explorar</span>
-            <a className="hv9" href="#soluciones" style={{ color: "var(--ink-2)", fontSize: "14px" }}>Soluciones</a>
-            <a className="hv9" href="#proyectos" style={{ color: "var(--ink-2)", fontSize: "14px" }}>Proyectos</a>
+            <a className="foot-link" href="#soluciones" style={{ fontSize: "14px" }}>Soluciones</a>
+            <a className="foot-link" href="#proyectos" style={{ fontSize: "14px" }}>Proyectos</a>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "11px" }}>
             <span className="mono" style={{ fontSize: "11px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".08em", marginBottom: "2px" }}>Contacto</span>
-            <a className="hv9" href={links.cta} style={{ color: "var(--ink-2)", fontSize: "14px" }}>Agendar llamada</a>
-            <a className="hv9" href="#contacto" style={{ color: "var(--ink-2)", fontSize: "14px" }}>Escribinos</a>
+            <a className="foot-link" href={links.cta} style={{ fontSize: "14px" }}>Agendar llamada</a>
+            <a className="foot-link" href="#contacto" style={{ fontSize: "14px" }}>Escribinos</a>
           </div>
         </div>
       </div>

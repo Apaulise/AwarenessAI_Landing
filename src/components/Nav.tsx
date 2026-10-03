@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { links } from "@/config";
 
@@ -39,8 +40,7 @@ export default function Nav() {
     >
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "14px clamp(18px,5vw,48px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
         <a href="#top" aria-label="AwarenessAI inicio" style={{ display: "flex", alignItems: "center", gap: 9, color: "var(--ink)", fontWeight: 600, fontSize: 18, letterSpacing: "-.01em" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/awareness-mark.png" alt="" style={{ width: 22, height: 22, objectFit: "contain" }} />
+          <Image src="/awareness-mark.png" alt="" width={22} height={22} priority style={{ objectFit: "contain" }} />
           <span>
             Awareness<span style={{ color: "var(--ink-3)" }}>AI</span>
           </span>
@@ -89,6 +89,9 @@ export default function Nav() {
               {l.label}
             </a>
           ))}
+          <a href={links.cta} data-cta="nav_mobile_cta" onClick={() => setOpen(false)} tabIndex={open ? 0 : -1} className="nav-cta" style={{ justifyContent: "center", marginTop: 14 }}>
+            Analicemos tu negocio
+          </a>
         </div>
       </div>
     </nav>

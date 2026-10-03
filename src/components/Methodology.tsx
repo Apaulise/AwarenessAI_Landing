@@ -74,7 +74,7 @@ export default function Methodology() {
           </div>
         </div>
         <div data-reveal style={{ marginTop: "44px", textAlign: "center" }}>
-          <a className="hv8" href={links.cta} data-cta="methodology_cta" style={{ display: "inline-flex", alignItems: "center", gap: "9px", padding: "14px 26px", borderRadius: "var(--radius-sm)", background: "var(--raised)", border: "1px solid var(--line-strong)", color: "var(--ink)", fontSize: "15px", fontWeight: "600", transition: "background .2s,border-color .2s" }}>
+          <a className="btn btn-outline-signal" href={links.cta} data-cta="methodology_cta" style={{ padding: "14px 26px", fontSize: "15px" }}>
             {"Empecemos por el paso 01 "}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />

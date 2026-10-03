@@ -9,7 +9,7 @@ export default function WhatsAppFloat() {
       href={links.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
-      className="hv1"
+      aria-label="Escribinos por WhatsApp"
       style={{
         position: "fixed",
         bottom: 24,
@@ -26,11 +26,9 @@ export default function WhatsAppFloat() {
         transition: "transform 0.2s, box-shadow 0.2s",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "scale(1.1)";
         e.currentTarget.style.boxShadow = "0 12px 32px rgba(37, 211, 102, 0.5)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "scale(1)";
         e.currentTarget.style.boxShadow = "0 8px 24px rgba(37, 211, 102, 0.35)";
       }}
     >

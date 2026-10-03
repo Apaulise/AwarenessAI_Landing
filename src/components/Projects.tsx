@@ -31,7 +31,7 @@ export default function Projects() {
                 <span style={{ color: "var(--ink-2)", fontWeight: "600" }}>Solución:</span>
                 {" un sistema que analiza digitalmente un negocio y prioriza dónde la tecnología genera más impacto."}
               </p>
-              <a className="hv3" href={links.cta} style={{ display: "inline-flex", alignItems: "center", gap: "7px", fontSize: "14px", fontWeight: "600", color: "var(--ink)" }}>
+              <a className="link-arrow hl" href={links.cta}>
                 {"Ver solución "}
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -107,7 +107,7 @@ export default function Projects() {
                 <span style={{ color: "var(--ink-2)", fontWeight: "600" }}>Solución:</span>
                 {" un asistente que responde, clasifica consultas y ejecuta acciones directamente por WhatsApp."}
               </p>
-              <a className="hv3" href={links.cta} style={{ display: "inline-flex", alignItems: "center", gap: "7px", fontSize: "14px", fontWeight: "600", color: "var(--ink)" }}>
+              <a className="link-arrow hl" href={links.cta}>
                 {"Ver solución "}
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -131,7 +131,7 @@ export default function Projects() {
                 <span style={{ color: "var(--ink-2)", fontWeight: "600" }}>Solución:</span>
                 {" registra clientes, analiza recurrencia, detecta inactivos y facilita seguimientos personalizados."}
               </p>
-              <a className="hv3" href={links.cta} style={{ display: "inline-flex", alignItems: "center", gap: "7px", fontSize: "14px", fontWeight: "600", color: "var(--ink)" }}>
+              <a className="link-arrow hl" href={links.cta}>
                 {"Ver solución "}
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -217,7 +217,7 @@ export default function Projects() {
               <p style={{ margin: "0 0 16px", fontSize: "14.5px", lineHeight: "1.55", color: "var(--ink-2)" }}>
                 Analiza páginas web y detecta oportunidades de comunicación, UX, conversión y posicionamiento.
               </p>
-              <a className="hv4" href={links.cta} style={{ display: "inline-flex", alignItems: "center", gap: "7px", fontSize: "14px", fontWeight: "600", color: "var(--ink)" }}>
+              <a className="link-arrow" href={links.cta}>
                 {"Ver solución "}
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -242,7 +242,7 @@ export default function Projects() {
               </div>
               <h3 style={{ margin: "0 0 10px", fontSize: "20px", fontWeight: "600", letterSpacing: "-.01em", color: "var(--ink)" }}>YouTube & Personal Brand Intelligence</h3>
               <p style={{ margin: "0 0 16px", fontSize: "14.5px", lineHeight: "1.55", color: "var(--ink-2)" }}>Análisis de canales, contenido, posicionamiento y estrategia para marca personal.</p>
-              <a className="hv4" href={links.cta} style={{ display: "inline-flex", alignItems: "center", gap: "7px", fontSize: "14px", fontWeight: "600", color: "var(--ink)" }}>
+              <a className="link-arrow" href={links.cta}>
                 {"Ver solución "}
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12" />

@@ -26,7 +26,7 @@ export default function AgendarPage() {
               Awareness<span style={{ color: "var(--ink-3)" }}>AI</span>
             </span>
           </a>
-          <a className="hv9" href="/" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--ink-2)", fontSize: 14, fontWeight: 500 }}>
+          <a className="foot-link" href="/" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 500 }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="19" y1="12" x2="5" y2="12" />
               <polyline points="12 19 5 12 12 5" />

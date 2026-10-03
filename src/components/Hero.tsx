@@ -6,7 +6,6 @@ export default function Hero() {
     <header id="top" style={{ position: "relative", padding: "clamp(120px,15vh,168px) clamp(18px,5vw,48px) clamp(60px,8vw,100px)", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: "0", zIndex: "0", pointerEvents: "none" }}>
         <div style={{ position: "absolute", top: "-8%", left: "8%", width: "52vw", height: "52vw", maxWidth: "720px", maxHeight: "720px", background: "radial-gradient(circle,rgba(242,193,78,.20),transparent 62%)", filter: "blur(20px)", animation: "glowpulse 9s ease-in-out infinite" }}></div>
-        <div style={{ position: "absolute", bottom: "-14%", right: "2%", width: "44vw", height: "44vw", maxWidth: "600px", maxHeight: "600px", background: "radial-gradient(circle,rgba(138,141,146,.18),transparent 64%)", filter: "blur(24px)", animation: "glowpulse 11s ease-in-out infinite .8s" }}></div>
         <div style={{ position: "absolute", inset: "0", backgroundImage: "linear-gradient(rgba(236,234,229,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(236,234,229,.045) 1px,transparent 1px)", backgroundSize: "56px 56px", maskImage: "radial-gradient(ellipse 90% 70% at 50% 30%,#000,transparent 80%)", WebkitMaskImage: "radial-gradient(ellipse 90% 70% at 50% 30%,#000,transparent 80%)" }}></div>
       <FlowLines />
       </div>
@@ -21,20 +20,20 @@ export default function Hero() {
             <br />
             funcionar mejor.
             <br />
-            <span style={{ background: "linear-gradient(90deg,var(--signal),var(--smoke-4),var(--signal))", backgroundSize: "200% auto", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", animation: "gshift 8s linear infinite" }}>Encontramos cómo.</span>
+            <span style={{ background: "linear-gradient(90deg,var(--signal),var(--signal-hover))", WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent" }}>Encontramos cómo.</span>
           </h1>
           <p style={{ margin: "0 0 34px", maxWidth: "540px", fontSize: "clamp(16px,1.5vw,19px)", lineHeight: "1.6", color: "var(--ink-2)", textWrap: "pretty" }}>
             Analizamos cómo funciona tu empresa, detectamos procesos que pueden mejorar y construimos soluciones usando Inteligencia Artificial, automatización y software.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", alignItems: "center" }}>
-            <a className="hv1" href={links.cta} data-cta="hero_cta" style={{ display: "inline-flex", alignItems: "center", gap: "9px", padding: "15px 26px", borderRadius: "var(--radius-sm)", background: "var(--signal)", color: "var(--on-signal)", fontSize: "16px", fontWeight: "600", transition: "transform .2s,background .2s" }}>
+            <a className="btn btn-primary" href={links.cta} data-cta="hero_cta" style={{ padding: "15px 26px", fontSize: "16px" }}>
               Analicemos tu negocio
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </a>
-            <a className="hv2" href="#proyectos" data-cta="solutions_cta" style={{ display: "inline-flex", alignItems: "center", gap: "9px", padding: "15px 24px", borderRadius: "var(--radius-sm)", background: "var(--raised)", border: "1px solid var(--line-strong)", color: "var(--ink)", fontSize: "16px", fontWeight: "600", transition: "background .2s,border-color .2s" }}>Ver soluciones</a>
+            <a className="btn btn-secondary" href="#proyectos" data-cta="solutions_cta" style={{ padding: "15px 24px", fontSize: "16px" }}>Ver soluciones</a>
           </div>
           <p className="mono" style={{ margin: "22px 0 0", fontSize: "12.5px", color: "var(--ink-3)", display: "flex", alignItems: "center", gap: "8px" }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--success)" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
@@ -51,20 +50,20 @@ export default function Hero() {
                 <span style={{ width: "6px", height: "6px", borderRadius: "999px", background: "var(--smoke-4)" }}></span>
                 <span className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", letterSpacing: ".04em" }}>AwarenessAI · Intelligence Layer</span>
               </div>
-              <span className="mono" style={{ fontSize: "10px", padding: "3px 8px", borderRadius: "var(--radius-sm)", border: "1px solid var(--line-strong)", color: "var(--ink-3)", letterSpacing: ".08em" }}>DEMO</span>
+              <span className="mono" style={{ fontSize: "12px", padding: "3px 9px", borderRadius: "var(--radius-sm)", border: "1px solid var(--signal)", color: "var(--signal-text)", letterSpacing: ".08em" }}>EJEMPLO ILUSTRATIVO</span>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "9px" }}>
               <div style={{ textAlign: "center", padding: "11px 6px", borderRadius: "var(--radius-sm)", background: "var(--raised)" }}>
-                <div style={{ fontSize: "11px", fontWeight: "600", color: "var(--ink)" }}>WhatsApp</div>
-                <div className="mono" style={{ fontSize: "9px", color: "var(--ink-3)", marginTop: "2px" }}>142 consultas</div>
+                <div style={{ fontSize: "12.5px", fontWeight: "600", color: "var(--ink)" }}>WhatsApp</div>
+                <div className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", marginTop: "2px" }}>142 consultas</div>
               </div>
               <div style={{ textAlign: "center", padding: "11px 6px", borderRadius: "var(--radius-sm)", background: "var(--raised)" }}>
-                <div style={{ fontSize: "11px", fontWeight: "600", color: "var(--ink)" }}>CRM</div>
-                <div className="mono" style={{ fontSize: "9px", color: "var(--ink-3)", marginTop: "2px" }}>clientes</div>
+                <div style={{ fontSize: "12.5px", fontWeight: "600", color: "var(--ink)" }}>CRM</div>
+                <div className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", marginTop: "2px" }}>clientes</div>
               </div>
               <div style={{ textAlign: "center", padding: "11px 6px", borderRadius: "var(--radius-sm)", background: "var(--raised)" }}>
-                <div style={{ fontSize: "11px", fontWeight: "600", color: "var(--ink)" }}>Instagram</div>
-                <div className="mono" style={{ fontSize: "9px", color: "var(--ink-3)", marginTop: "2px" }}>mensajes</div>
+                <div style={{ fontSize: "12.5px", fontWeight: "600", color: "var(--ink)" }}>Instagram</div>
+                <div className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", marginTop: "2px" }}>mensajes</div>
               </div>
             </div>
             <div style={{ display: "flex", justifyContent: "center" }}>
@@ -82,7 +81,7 @@ export default function Hero() {
                 </span>
                 <div>
                   <div style={{ fontSize: "14px", fontWeight: "600", color: "var(--ink)" }}>Capa de inteligencia</div>
-                  <div className="mono" style={{ fontSize: "10px", color: "var(--signal-text)", marginTop: "2px" }}>analiza · decide · ejecuta</div>
+                  <div className="mono" style={{ fontSize: "12px", color: "var(--signal-text)", marginTop: "2px" }}>analiza · decide · ejecuta</div>
                 </div>
               </div>
             </div>
@@ -93,30 +92,30 @@ export default function Hero() {
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "9px" }}>
               <div style={{ textAlign: "center", padding: "10px 4px", borderRadius: "var(--radius-sm)", background: "var(--raised)", border: "1px solid var(--line)" }}>
-                <div style={{ fontSize: "11px", fontWeight: "600", color: "var(--ink-2)" }}>Datos</div>
+                <div style={{ fontSize: "12.5px", fontWeight: "600", color: "var(--ink-2)" }}>Datos</div>
               </div>
               <div style={{ textAlign: "center", padding: "10px 4px", borderRadius: "var(--radius-sm)", background: "var(--raised)", border: "1px solid var(--line)" }}>
-                <div style={{ fontSize: "11px", fontWeight: "600", color: "var(--ink-2)" }}>Acción</div>
+                <div style={{ fontSize: "12.5px", fontWeight: "600", color: "var(--ink-2)" }}>Acción</div>
               </div>
               <div style={{ textAlign: "center", padding: "10px 4px", borderRadius: "var(--radius-sm)", background: "var(--raised)", border: "1px solid var(--line)" }}>
-                <div style={{ fontSize: "11px", fontWeight: "600", color: "var(--ink-2)" }}>Automatización</div>
+                <div style={{ fontSize: "12.5px", fontWeight: "600", color: "var(--ink-2)" }}>Automatización</div>
               </div>
             </div>
-            <div style={{ marginTop: "16px", paddingTop: "16px", borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "8px" }}>
+            <div style={{ marginTop: "16px", paddingTop: "16px", borderTop: "1px solid var(--line)", display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "14px 12px" }}>
               <div>
-                <div className="mono" style={{ fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".05em" }}>Automatizados</div>
+                <div className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", textTransform: "uppercase", letterSpacing: ".05em" }}>Automatizados</div>
                 <div style={{ fontSize: "19px", fontWeight: "500", color: "var(--ink)", marginTop: "3px" }}>12</div>
               </div>
               <div>
-                <div className="mono" style={{ fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".05em" }}>Horas rec.</div>
+                <div className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", textTransform: "uppercase", letterSpacing: ".05em" }}>Horas rec.</div>
                 <div style={{ fontSize: "19px", fontWeight: "500", color: "var(--ink)", marginTop: "3px" }}>34h</div>
               </div>
               <div>
-                <div className="mono" style={{ fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".05em" }}>Consultas</div>
+                <div className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", textTransform: "uppercase", letterSpacing: ".05em" }}>Consultas</div>
                 <div style={{ fontSize: "19px", fontWeight: "500", color: "var(--ink)", marginTop: "3px" }}>142</div>
               </div>
               <div>
-                <div className="mono" style={{ fontSize: "9px", color: "var(--ink-3)", textTransform: "uppercase", letterSpacing: ".05em" }}>Eficiencia</div>
+                <div className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", textTransform: "uppercase", letterSpacing: ".05em" }}>Eficiencia</div>
                 <div style={{ fontSize: "19px", fontWeight: "500", color: "var(--signal-text)", marginTop: "3px" }}>+27%</div>
               </div>
             </div>

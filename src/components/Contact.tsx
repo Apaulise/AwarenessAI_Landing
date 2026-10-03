@@ -12,24 +12,48 @@ const BULLETS = [
 ];
 
 type Status = "idle" | "sending" | "sent" | "error";
+type FieldErrors = Partial<Record<"name" | "email" | "company", string>>;
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(data: Record<string, FormDataEntryValue>): FieldErrors {
+  const errs: FieldErrors = {};
+  if (!String(data.name ?? "").trim()) errs.name = "Escribí tu nombre.";
+  const email = String(data.email ?? "").trim();
+  if (!email) errs.email = "Escribí tu email.";
+  else if (!EMAIL_RE.test(email)) errs.email = "Revisá el email: parece incompleto.";
+  if (!String(data.company ?? "").trim()) errs.company = "Escribí el nombre de tu empresa.";
+  return errs;
+}
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+    const errs = validate(data);
+    setFieldErrors(errs);
+    const first = (["name", "email", "company"] as const).find((k) => errs[k]);
+    if (first) {
+      setStatus("idle");
+      setError("");
+      form.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
+      return;
+    }
     setStatus("sending");
     setError("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        body: JSON.stringify(data),
       });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || "No pudimos enviar tu mensaje.");
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(out.error || "No pudimos enviar tu mensaje.");
       form.reset();
       setStatus("sent");
     } catch (err) {
@@ -58,7 +82,7 @@ export default function Contact() {
           </ul>
           <p style={{ margin: "0 0 14px", fontSize: 15, color: "var(--ink-3)" }}>¿Preferís hablar directamente?</p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <a className="hv2" href={links.cal} style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "13px 22px", borderRadius: "var(--radius-sm)", background: "var(--raised)", border: "1px solid var(--line-strong)", color: "var(--ink)", fontSize: 15, fontWeight: 600, transition: "background .2s,border-color .2s" }}>
+            <a className="btn btn-secondary" href={links.cal} style={{ padding: "13px 22px", fontSize: 15 }}>
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" />
                 <line x1="16" y1="2" x2="16" y2="6" />
@@ -67,7 +91,7 @@ export default function Contact() {
               </svg>
               Agendar llamada
             </a>
-            <a className="hv2" href={links.whatsapp} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "13px 22px", borderRadius: 13, background: "rgba(37,211,102,.12)", border: "1px solid rgba(37,211,102,.3)", color: "#25D366", fontSize: 15, fontWeight: 600, transition: "background .2s,border-color .2s" }}>
+            <a className="btn btn-wa" href={links.whatsapp} target="_blank" rel="noopener noreferrer" style={{ padding: "13px 22px", fontSize: 15 }}>
               <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.395-2.847 1.12-.735.722-1.14 1.71-1.14 2.734 0 2.231 1.815 4.032 4.032 4.032 1.024 0 2.012-.404 2.747-1.14.725-.74 1.12-1.77 1.12-2.847 0-2.217-1.815-4.032-4.032-4.032m9.268-5.657c-2.904-2.899-7.582-3.573-11.485-1.808-3.903 1.765-6.272 5.534-6.272 9.649 0 1.337.275 2.646.813 3.896L2.001 22l4.572-1.346c1.224.449 2.51.724 3.793.724 5.968 0 10.821-4.853 10.821-10.821 0-2.891-1.139-5.614-3.204-7.652" />
               </svg>
@@ -86,33 +110,36 @@ export default function Contact() {
               </div>
               <h3 style={{ margin: "0 0 8px", fontSize: 24, fontWeight: 600, color: "var(--ink)" }}>¡Mensaje enviado!</h3>
               <p style={{ margin: "0 0 22px", fontSize: 15, lineHeight: 1.6, color: "var(--ink-2)" }}>Gracias por escribirnos. Te respondemos por mail lo antes posible.</p>
-              <button type="button" className="hv2" onClick={() => setStatus("idle")} style={{ padding: "11px 20px", borderRadius: "var(--radius-sm)", background: "var(--raised)", border: "1px solid var(--line-strong)", color: "var(--ink)", fontSize: 14, fontWeight: 600, cursor: "pointer", fontFamily: "inherit" }}>
+              <button type="button" className="btn btn-secondary" onClick={() => setStatus("idle")} style={{ padding: "11px 20px", fontSize: 14 }}>
                 Enviar otro mensaje
               </button>
             </div>
           ) : (
-            <form onSubmit={onSubmit} style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+            <form onSubmit={onSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: 22 }}>
               {/* Honeypot: hidden from people, filled by bots */}
               <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }} />
 
               <div data-contact-row style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
                 <label className="cf-field">
                   <span>Nombre completo</span>
-                  <input className="cf-input" name="name" type="text" required maxLength={120} autoComplete="name" placeholder="Tu nombre" />
+                  <input className="cf-input" name="name" type="text" required aria-required="true" aria-invalid={!!fieldErrors.name} aria-describedby={fieldErrors.name ? "err-name" : undefined} onChange={() => fieldErrors.name && setFieldErrors((f) => ({ ...f, name: undefined }))} maxLength={120} autoComplete="name" placeholder="Tu nombre" />
+                  {fieldErrors.name && <small id="err-name" role="alert" className="cf-error">{fieldErrors.name}</small>}
                 </label>
                 <label className="cf-field">
                   <span>Email</span>
-                  <input className="cf-input" name="email" type="email" required maxLength={200} autoComplete="email" placeholder="tu@empresa.com" />
+                  <input className="cf-input" name="email" type="email" required aria-required="true" aria-invalid={!!fieldErrors.email} aria-describedby={fieldErrors.email ? "err-email" : undefined} onChange={() => fieldErrors.email && setFieldErrors((f) => ({ ...f, email: undefined }))} maxLength={200} autoComplete="email" placeholder="tu@empresa.com" />
+                  {fieldErrors.email && <small id="err-email" role="alert" className="cf-error">{fieldErrors.email}</small>}
                 </label>
               </div>
 
               <div data-contact-row style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
                 <label className="cf-field">
                   <span>Empresa</span>
-                  <input className="cf-input" name="company" type="text" required maxLength={160} autoComplete="organization" placeholder="Nombre de tu empresa" />
+                  <input className="cf-input" name="company" type="text" required aria-required="true" aria-invalid={!!fieldErrors.company} aria-describedby={fieldErrors.company ? "err-company" : undefined} onChange={() => fieldErrors.company && setFieldErrors((f) => ({ ...f, company: undefined }))} maxLength={160} autoComplete="organization" placeholder="Nombre de tu empresa" />
+                  {fieldErrors.company && <small id="err-company" role="alert" className="cf-error">{fieldErrors.company}</small>}
                 </label>
                 <label className="cf-field">
-                  <span>Tamaño del equipo</span>
+                  <span>Tamaño del equipo <em>(opcional)</em></span>
                   <select className="cf-input" name="teamSize" defaultValue="">
                     <option value="" disabled>Cantidad de personas</option>
                     {TEAM_SIZES.map((s) => (
@@ -124,20 +151,20 @@ export default function Contact() {
 
               <label className="cf-field">
                 <span>¿Qué te gustaría mejorar? <em>(opcional)</em></span>
-                <textarea className="cf-input" name="details" rows={5} maxLength={4000} placeholder="Contanos sobre tu negocio y qué procesos te gustaría mejorar..." />
+                <textarea className="cf-input" name="details" rows={4} maxLength={4000} placeholder="Contanos sobre tu negocio y qué procesos te gustaría mejorar..." />
               </label>
 
               <label className="cf-field">
                 <span>¿Cómo nos conociste? <em>(opcional)</em></span>
-                <textarea className="cf-input" name="source" rows={3} maxLength={500} placeholder="Contanos dónde nos encontraste..." />
+                <input className="cf-input" name="source" type="text" maxLength={500} placeholder="Instagram, recomendación, Google..." />
               </label>
 
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 16 }}>
-                <button type="submit" disabled={status === "sending"} className="hv1" style={{ display: "inline-flex", alignItems: "center", gap: 9, padding: "14px 26px", borderRadius: "var(--radius-sm)", border: "none", background: "var(--signal)", color: "var(--on-signal)", fontSize: 16, fontWeight: 600, fontFamily: "inherit", cursor: status === "sending" ? "wait" : "pointer", opacity: status === "sending" ? 0.7 : 1, transition: "transform .2s,background .2s" }}>
+                <button type="submit" disabled={status === "sending"} className="btn btn-primary" style={{ padding: "14px 26px", fontSize: 16, cursor: status === "sending" ? "wait" : "pointer", opacity: status === "sending" ? 0.7 : 1 }}>
                   {status === "sending" ? "Enviando…" : "Enviar mensaje"}
                 </button>
                 {status === "error" && (
-                  <span role="alert" style={{ fontSize: 14, color: "var(--danger)" }}>{error}</span>
+                  <span role="alert" style={{ fontSize: 14, color: "var(--danger)", display: "inline-flex", alignItems: "center", gap: 6 }}>⚠ {error}</span>
                 )}
               </div>
 
