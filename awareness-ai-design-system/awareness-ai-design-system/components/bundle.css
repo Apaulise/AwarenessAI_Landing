@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
-/* Awareness AI — clases de referencia (prefijo aw-) */
+/* SmokIA — clases de referencia (prefijo aw-) */
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:14px;line-height:20px;-webkit-font-smoothing:antialiased}
 *{box-sizing:border-box}
 .aw-pad{padding:var(--space-4)}

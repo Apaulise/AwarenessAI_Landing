@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 
 const ITEMS = [
-  { q: "¿Qué tipo de empresas pueden trabajar con AwarenessAI?", a: "Pequeñas y medianas empresas, negocios locales, profesionales y empresas de servicios. Si tenés procesos, probablemente haya algo que mejorar." },
+  { q: "¿Qué tipo de empresas pueden trabajar con SmokIA?", a: "Pequeñas y medianas empresas, negocios locales, profesionales y empresas de servicios. Si tenés procesos, probablemente haya algo que mejorar." },
   { q: "¿Necesito saber de Inteligencia Artificial?", a: "No. Nuestro trabajo es entender tu negocio y traducir la tecnología a resultados concretos. Vos ponés el conocimiento del negocio." },
   { q: "¿Qué procesos se pueden automatizar?", a: "Atención de consultas, seguimiento de clientes, tareas administrativas, reportes, recordatorios y conexión entre herramientas que hoy no se comunican." },
   { q: "¿Todas las soluciones utilizan IA?", a: "No. A veces la mejor solución es una automatización simple o un sistema interno. La IA es una herramienta más, no un objetivo." },

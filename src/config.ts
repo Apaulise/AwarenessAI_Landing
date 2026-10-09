@@ -7,7 +7,7 @@ const booking = "/agendar";
 export const links = {
   cta: booking,
   cal: booking,
-  /** Cal.com event slug, "usuario/evento" (e.g. "awarenessai/llamada-diagnostico"). Used by the booking page. */
+  /** Cal.com event slug, "usuario/evento" (e.g. "smokia/llamada-diagnostico"). Used by the booking page. */
   calSlug: process.env.NEXT_PUBLIC_CAL_LINK || "",
   linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || "#",
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "#",

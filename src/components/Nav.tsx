@@ -39,10 +39,10 @@ export default function Nav() {
       style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100 }}
     >
       <div style={{ maxWidth: 1240, margin: "0 auto", padding: "14px clamp(18px,5vw,48px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24 }}>
-        <a href="#top" aria-label="AwarenessAI inicio" style={{ display: "flex", alignItems: "center", gap: 9, color: "var(--ink)", fontWeight: 600, fontSize: 18, letterSpacing: "-.01em" }}>
-          <Image src="/awareness-mark.png" alt="" width={22} height={22} priority style={{ objectFit: "contain" }} />
+        <a href="#top" aria-label="SmokIA inicio" style={{ display: "flex", alignItems: "center", gap: 9, color: "var(--ink)", fontWeight: 600, fontSize: 18, letterSpacing: "-.01em" }}>
+          <Image src="/smokia-mark.png" alt="" width={22} height={22} priority style={{ objectFit: "contain" }} />
           <span>
-            Awareness<span style={{ color: "var(--ink-3)" }}>AI</span>
+            Smok<span style={{ color: "var(--ink-3)" }}>IA</span>
           </span>
         </a>
         <div className="nav-desk" style={{ alignItems: "center", gap: 30 }}>

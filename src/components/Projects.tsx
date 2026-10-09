@@ -44,7 +44,7 @@ export default function Projects() {
                 <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "var(--smoke-3)" }}></span>
                 <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "var(--smoke-3)" }}></span>
                 <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: "var(--smoke-3)" }}></span>
-                <span className="mono" style={{ marginLeft: "8px", fontSize: "10px", color: "var(--ink-3)" }}>audit.awarenessai.app</span>
+                <span className="mono" style={{ marginLeft: "8px", fontSize: "10px", color: "var(--ink-3)" }}>audit.smokia.app</span>
               </div>
               <div style={{ padding: "18px" }}>
                 <div className="mono" style={{ fontSize: "10px", color: "var(--ink-3)", letterSpacing: ".06em", marginBottom: "12px" }}>OPORTUNIDADES DETECTADAS</div>
@@ -81,7 +81,7 @@ export default function Projects() {
                   </svg>
                 </span>
                 <div>
-                  <div style={{ fontSize: "13px", fontWeight: "600", color: "#fff" }}>Asistente AwarenessAI</div>
+                  <div style={{ fontSize: "13px", fontWeight: "600", color: "#fff" }}>Asistente SmokIA</div>
                   <div style={{ fontSize: "10px", color: "rgba(255,255,255,.75)" }}>en línea</div>
                 </div>
               </div>

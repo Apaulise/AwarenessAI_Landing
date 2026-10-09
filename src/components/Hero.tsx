@@ -48,7 +48,7 @@ export default function Hero() {
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "22px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ width: "6px", height: "6px", borderRadius: "999px", background: "var(--smoke-4)" }}></span>
-                <span className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", letterSpacing: ".04em" }}>AwarenessAI · Intelligence Layer</span>
+                <span className="mono" style={{ fontSize: "12px", color: "var(--ink-2)", letterSpacing: ".04em" }}>SmokIA · Intelligence Layer</span>
               </div>
               <span className="mono" style={{ fontSize: "12px", padding: "3px 9px", borderRadius: "var(--radius-sm)", border: "1px solid var(--signal)", color: "var(--signal-text)", letterSpacing: ".08em" }}>EJEMPLO ILUSTRATIVO</span>
             </div>

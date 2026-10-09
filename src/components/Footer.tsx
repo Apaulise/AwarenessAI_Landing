@@ -8,8 +8,8 @@ export default function Footer() {
         <div style={{ maxWidth: "300px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "9px", fontWeight: "600", fontSize: "18px", letterSpacing: "-.01em", marginBottom: "12px", color: "var(--ink)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/awareness-mark.png" alt="" style={{ width: 20, height: 20, objectFit: "contain" }} />
-            Awareness<span style={{ color: "var(--ink-3)" }}>AI</span>
+            <img src="/smokia-mark.png" alt="" style={{ width: 20, height: 20, objectFit: "contain" }} />
+            Smok<span style={{ color: "var(--ink-3)" }}>IA</span>
           </div>
           <p style={{ margin: "0 0 16px", fontSize: "14px", lineHeight: "1.55", color: "var(--ink-3)" }}>Soluciones de IA construidas alrededor de negocios reales.</p>
           <div style={{ display: "flex", gap: "12px" }}>
@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
       </div>
       <div style={{ maxWidth: "1160px", margin: "36px auto 0", paddingTop: "24px", borderTop: "1px solid var(--line)", display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "space-between", alignItems: "center" }}>
-        <span className="mono" style={{ fontSize: "12px", color: "var(--ink-3)" }}>© 2026 AwarenessAI · Argentina</span>
+        <span className="mono" style={{ fontSize: "12px", color: "var(--ink-3)" }}>© 2026 SmokIA · Argentina</span>
         <span className="mono" style={{ fontSize: "12px", color: "var(--ink-3)" }}>Primero el problema. Después la tecnología.</span>
       </div>
     </footer>

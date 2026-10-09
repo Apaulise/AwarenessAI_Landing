@@ -1,6 +1,6 @@
-# Awareness AI — design system
+# SmokIA — design system
 
-**Señal y humo.** Awareness AI construye agentes y automatizaciones de IA para pymes. Sus herramientas tienen que verse como instrumentos de precisión: sobrias, densas y confiables. El humo es la base (grises cálidos, capas, líneas finas); el amarillo es la señal y aparece poco, siempre con un significado. Este sistema cubre el Gestor de Leads y todo producto interno o de cliente de Awareness AI.
+**Señal y humo.** SmokIA construye agentes y automatizaciones de IA para pymes. Sus herramientas tienen que verse como instrumentos de precisión: sobrias, densas y confiables. El humo es la base (grises cálidos, capas, líneas finas); el amarillo es la señal y aparece poco, siempre con un significado. Este sistema cubre el Gestor de Leads y todo producto interno o de cliente de SmokIA.
 
 ## Principios
 

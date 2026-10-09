@@ -3,8 +3,8 @@ import { links } from "@/config";
 import CalEmbed from "@/components/CalEmbed";
 
 export const metadata: Metadata = {
-  title: "Agendar llamada — AwarenessAI",
-  description: "Elegí día y horario para una llamada de diagnóstico sin compromiso con AwarenessAI.",
+  title: "Agendar llamada — SmokIA",
+  description: "Elegí día y horario para una llamada de diagnóstico sin compromiso con SmokIA.",
 };
 
 export default function AgendarPage() {
@@ -19,11 +19,11 @@ export default function AgendarPage() {
 
       <div style={{ position: "relative", zIndex: 1, maxWidth: 1100, margin: "0 auto" }}>
         <header style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, marginBottom: "clamp(24px,4vw,44px)" }}>
-          <a href="/" aria-label="AwarenessAI inicio" style={{ display: "flex", alignItems: "center", gap: 9, color: "var(--ink)", fontWeight: 600, fontSize: 18, letterSpacing: "-.01em" }}>
+          <a href="/" aria-label="SmokIA inicio" style={{ display: "flex", alignItems: "center", gap: 9, color: "var(--ink)", fontWeight: 600, fontSize: 18, letterSpacing: "-.01em" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/awareness-mark.png" alt="" style={{ width: 22, height: 22, objectFit: "contain" }} />
+            <img src="/smokia-mark.png" alt="" style={{ width: 22, height: 22, objectFit: "contain" }} />
             <span>
-              Awareness<span style={{ color: "var(--ink-3)" }}>AI</span>
+              Smok<span style={{ color: "var(--ink-3)" }}>IA</span>
             </span>
           </a>
           <a className="foot-link" href="/" style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 500 }}>
